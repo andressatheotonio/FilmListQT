@@ -1,8 +1,13 @@
 #include "filme.h"
 
-Filme::Filme()
+QString Filme::getGenero() const
 {
+    return genero;
+}
 
+void Filme::setGenero(const QString &value)
+{
+    genero = value;
 }
 
 void Filme::setNome(const QString &value)
@@ -40,22 +45,50 @@ void Filme::setAssistido(bool assist)
     assistido = assist;
 }
 
+QString Filme::getReview() const
+{
+    return review;
+}
+
+void Filme::setReview(const QString &value)
+{
+    review = value;
+}
+
 bool Filme::getAssistido() const
 {
     return assistido;
 }
 
-float Filme::getGeral() const
+float Filme::CalcularMedia() const
 {
-    return ((getCritica()*7)+(getPublico()*3))/10.0;
+    return ((getCritica()*7.0)+(getPublico()*3.0))/10.0;
 }
 
 
-Filme::Filme(QString n, float mc, float mp, bool a)
+Filme::Filme(QString n, QString g, float mc, float mp, bool a)
 {
     setNome(n);
+    setGenero(g);
     setCritica(mc);
     setPublico(mp);
     setAssistido(a);
 }
+
+Filme::Filme(QString n, QString g, float mc, float mp, bool a, QString r)
+{
+    setNome(n);
+    setGenero(g);
+    setCritica(mc);
+    setPublico(mp);
+    setAssistido(a);
+    setReview(r);
+}
+
+Filme::Filme()
+{
+
+}
+
+
 

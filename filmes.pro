@@ -26,11 +26,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    filme.cpp
+    filme.cpp \
+    classificador.cpp
 
 HEADERS += \
         mainwindow.h \
-    filme.h
+    filme.h \
+    classificador.h
 
 FORMS += \
         mainwindow.ui

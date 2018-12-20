@@ -6,16 +6,22 @@ class Filme
 {
 private:
     QString nome;
+    QString genero;
     float mcritica;
     float mpublico;
     float mgeral;
     bool assistido;
+    QString review;
 public:
-    explicit Filme();
-    Filme(QString n, float mc, float mp, bool a);
+    Filme();
+    Filme(QString n, QString g, float mc, float mp, bool a);
+    Filme(QString n, QString g, float mc, float mp, bool a, QString r);
 
     QString getNome() const;
     void setNome(const QString &value);
+
+    QString getGenero() const;
+    void setGenero(const QString &value);
 
     float getCritica() const;
     void setCritica(float value);
@@ -26,8 +32,10 @@ public:
     bool getAssistido() const;
     void setAssistido(bool assist);
 
-    float getGeral() const;
+    QString getReview() const;
+    void setReview (const QString &value);
 
+    float CalcularMedia() const;
 };
 
 #endif // FILME_H
