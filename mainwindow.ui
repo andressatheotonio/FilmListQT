@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>789</width>
-    <height>664</height>
+    <width>830</width>
+    <height>715</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,11 +17,17 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>10</y>
-      <width>731</width>
-      <height>601</height>
+      <x>30</x>
+      <y>0</y>
+      <width>771</width>
+      <height>651</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="layoutDirection">
      <enum>Qt::LeftToRight</enum>
@@ -36,68 +42,183 @@
      <widget class="QWidget" name="formLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>20</y>
-        <width>671</width>
-        <height>197</height>
+        <x>40</x>
+        <y>10</y>
+        <width>681</width>
+        <height>200</height>
        </rect>
       </property>
       <layout class="QFormLayout" name="formLayout">
        <item row="1" column="0">
         <widget class="QLabel" name="lbName">
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string> Nome do Filme:</string>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLineEdit" name="leName"/>
+        <widget class="QLineEdit" name="leName">
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+          </font>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="lbName_2">
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string> Gênero:</string>
+         </property>
+        </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QComboBox" name="cbGenero"/>
+        <widget class="QComboBox" name="cbGenero">
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+          </font>
+         </property>
+         <item>
+          <property name="text">
+           <string>Selecione um gênero</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Drama</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Comédia</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ação/Aventura</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Terror</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Ficção</string>
+          </property>
+         </item>
+        </widget>
        </item>
        <item row="3" column="0">
         <widget class="QLabel" name="lbCritica">
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string> Nota Crítica:</string>
          </property>
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QLineEdit" name="leCritica"/>
+        <widget class="QLineEdit" name="leCritica">
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+          </font>
+         </property>
+        </widget>
        </item>
        <item row="4" column="0">
         <widget class="QLabel" name="lbPublico">
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string> Nota Público:</string>
          </property>
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="QLineEdit" name="lePublico"/>
+        <widget class="QLineEdit" name="lePublico">
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+          </font>
+         </property>
+        </widget>
        </item>
        <item row="5" column="0">
         <widget class="QLabel" name="lbReview">
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string> Review:</string>
          </property>
         </widget>
        </item>
        <item row="5" column="1">
-        <widget class="QLineEdit" name="leReview"/>
-       </item>
-       <item row="6" column="1">
-        <widget class="QCheckBox" name="chbAssistido">
-         <property name="text">
-          <string>Assistido</string>
+        <widget class="QLineEdit" name="leReview">
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+          </font>
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="lbName_2">
-         <property name="text">
-          <string> Gênero:</string>
+       <item row="6" column="0">
+        <widget class="QLabel" name="lbStatus">
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>9</pointsize>
+          </font>
          </property>
+         <property name="text">
+          <string> Status:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QComboBox" name="cbStatus">
+         <item>
+          <property name="text">
+           <string>Selecione um status</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Assistido</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Não Assistido</string>
+          </property>
+         </item>
         </widget>
        </item>
       </layout>
@@ -105,7 +226,7 @@
      <widget class="QTableWidget" name="tbAssistidos">
       <property name="geometry">
        <rect>
-        <x>0</x>
+        <x>10</x>
         <y>270</y>
         <width>341</width>
         <height>291</height>
@@ -116,6 +237,12 @@
         <width>341</width>
         <height>16777215</height>
        </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Segoe UI</family>
+        <pointsize>8</pointsize>
+       </font>
       </property>
       <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
        <bool>false</bool>
@@ -143,11 +270,17 @@
      <widget class="QLabel" name="lbTabTitle1">
       <property name="geometry">
        <rect>
-        <x>120</x>
+        <x>140</x>
         <y>240</y>
         <width>81</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Segoe UI</family>
+        <pointsize>9</pointsize>
+       </font>
       </property>
       <property name="layoutDirection">
        <enum>Qt::LeftToRight</enum>
@@ -162,11 +295,17 @@
      <widget class="QLabel" name="lbTabTitle2">
       <property name="geometry">
        <rect>
-        <x>480</x>
+        <x>520</x>
         <y>240</y>
         <width>121</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Segoe UI</family>
+        <pointsize>9</pointsize>
+       </font>
       </property>
       <property name="layoutDirection">
        <enum>Qt::LeftToRight</enum>
@@ -181,7 +320,7 @@
      <widget class="QTableWidget" name="tbPAssistir">
       <property name="geometry">
        <rect>
-        <x>380</x>
+        <x>410</x>
         <y>270</y>
         <width>341</width>
         <height>291</height>
@@ -192,6 +331,11 @@
         <width>341</width>
         <height>16777215</height>
        </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
       </property>
       <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
        <bool>false</bool>
@@ -219,14 +363,57 @@
      <widget class="QPushButton" name="btnInserir">
       <property name="geometry">
        <rect>
-        <x>310</x>
+        <x>330</x>
         <y>220</y>
         <width>93</width>
         <height>28</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Segoe UI</family>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Inserir</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnOrdemNota">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>580</y>
+        <width>121</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Ordenar por Nota</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnOrdemNome">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>580</y>
+        <width>131</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Segoe UI</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Ordenar por Nome</string>
       </property>
      </widget>
     </widget>
@@ -242,7 +429,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>789</width>
+     <width>830</width>
      <height>26</height>
     </rect>
    </property>

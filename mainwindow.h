@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "filme.h"
+#include "classificador.h"
 
 namespace Ui {
 class MainWindow;
@@ -20,6 +22,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+    void inserirFilmeNaTabela(Filme f, int row);
 };
 
 #endif // MAINWINDOW_H
