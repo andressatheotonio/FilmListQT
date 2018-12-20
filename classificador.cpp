@@ -7,9 +7,8 @@ bool comp(Filme a, Filme b){
 }
 
 bool cimp(Filme a, Filme b){
-    return a.getNome() > b.getNome();
+    return a.getNome() < b.getNome();
 }
-
 classificador::classificador()
 {
 
@@ -28,6 +27,21 @@ void classificador::ordenarListaNota()
 void classificador::ordenarListaNome()
 {
     std::stable_sort(lista.begin(), lista.end(), cimp);
+}
+
+void classificador::clear()
+{
+    lista.clear();
+}
+
+int classificador::size()
+{
+    return lista.size();
+}
+
+Filme classificador::operator[](int i)
+{
+    return lista[i];
 }
 
 

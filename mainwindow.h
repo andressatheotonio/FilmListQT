@@ -20,10 +20,15 @@ public:
 private slots:
     void on_btnInserir_clicked();
 
+    void on_btnOrdemNome_clicked();
+
+    void on_btnOrdemNota_clicked();
+
 private:
     Ui::MainWindow *ui;
 
     void inserirFilmeNaTabela(Filme f, int row);
+    classificador a, n;
 };
 
 #endif // MAINWINDOW_H

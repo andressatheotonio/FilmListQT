@@ -14,6 +14,11 @@ public:
     void inserirFilme (Filme f);
     void ordenarListaNota ();
     void ordenarListaNome ();
+
+    void clear();
+    int size();
+
+    Filme operator[](int i);
 };
 
 #endif // CLASSIFICADOR_H
