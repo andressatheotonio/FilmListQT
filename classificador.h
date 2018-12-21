@@ -14,6 +14,10 @@ public:
     void inserirFilme (Filme f);
     void ordenarListaNota ();
     void ordenarListaNome ();
+    QString melhorFilme();
+    QString piorFilme();
+    QString maiorGenero();
+    QString menorGenero();
 
     void clear();
     int size();

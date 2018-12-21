@@ -27,12 +27,14 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     filme.cpp \
-    classificador.cpp
+    classificador.cpp \
+    arquivos.cpp
 
 HEADERS += \
         mainwindow.h \
     filme.h \
-    classificador.h
+    classificador.h \
+    arquivos.h
 
 FORMS += \
         mainwindow.ui

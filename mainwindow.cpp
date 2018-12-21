@@ -17,6 +17,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_btnInserir_clicked()
 {
     int qrow = 0;
+    bool stats = true;
 
     if(ui->leName->text().size() != 0 and ui->leCritica->text().size() != 0 and ui->lePublico->text().size() != 0 and ui->cbGenero->currentText() != "Selecione um gênero" and ui->cbStatus->currentText() != "Selecione um status"){
         if(ui->leReview->text().size()==0){
@@ -24,7 +25,6 @@ void MainWindow::on_btnInserir_clicked()
             QString genero = ui->cbGenero->currentText();
             float medpub = (ui->lePublico->text()).toFloat();
             float medcri = (ui->leCritica->text()).toFloat();
-            bool stats = true;
             if(ui->cbStatus->currentText() == "Não Assistido")
                 stats = false;
 
@@ -48,7 +48,6 @@ void MainWindow::on_btnInserir_clicked()
             QString genero = ui->cbGenero->currentText();
             float medpub = (ui->lePublico->text()).toFloat();
             float medcri = (ui->leCritica->text()).toFloat();
-            bool stats = true;
             if(ui->cbStatus->currentText() == "Não Assistido")
                 stats = false;
             QString rev = ui->leReview->text();
@@ -60,14 +59,16 @@ void MainWindow::on_btnInserir_clicked()
                 qrow = ui->tbAssistidos->rowCount();
                 ui->tbAssistidos->insertRow(qrow);
                 inserirFilmeNaTabela(f,qrow);
+
             } else{
                 n.inserirFilme(f);
                 qrow = ui->tbPAssistir->rowCount();
                 ui->tbPAssistir->insertRow(qrow);
                 inserirFilmeNaTabela(f,qrow);
             }
+
+            }
         }
-    }
 
 
     ui->leName->clear();
@@ -81,14 +82,30 @@ void MainWindow::on_btnInserir_clicked()
 
 void MainWindow::inserirFilmeNaTabela(Filme f, int row)
 {
-    qDebug() << "opanenem\n";
     if(f.getAssistido() == true){
         ui->tbAssistidos->setItem(row,0, new QTableWidgetItem(QString::number(f.CalcularMedia())));
-        ui->tbAssistidos->setItem(row,1, new QTableWidgetItem(f.getNome()));
+        ui->tbAssistidos->setItem(row, 1, new QTableWidgetItem("link"));
+        ui->tbAssistidos->setItem(row,2, new QTableWidgetItem(f.getNome()));
     } else{
         ui->tbPAssistir->setItem(row,0, new QTableWidgetItem(QString::number(f.CalcularMedia())));
-        ui->tbPAssistir->setItem(row,1, new QTableWidgetItem(f.getNome()));
+        ui->tbPAssistir->setItem(row, 1, new QTableWidgetItem("link"));
+        ui->tbPAssistir->setItem(row,2, new QTableWidgetItem(f.getNome()));
     }
+}
+
+void MainWindow::atualizaPremios()
+{
+    ui->melhorfilmet->setText(a.melhorFilme());
+    ui->melhorfilmef->setText(n.melhorFilme());
+
+    ui->piorfilmet->setText(a.piorFilme());
+    ui->piorfilmef->setText(n.piorFilme());
+
+    ui->genmaist->setText(a.maiorGenero());
+    ui->genmaisf->setText(n.maiorGenero());
+
+    ui->genmenost->setText(a.menorGenero());
+    ui->genmenosf->setText(n.menorGenero());
 }
 
 void MainWindow::on_btnOrdemNome_clicked()
@@ -98,15 +115,12 @@ void MainWindow::on_btnOrdemNome_clicked()
 
     a.ordenarListaNome();
     n.ordenarListaNome();
-    qDebug() << "oi\n";
     for(int i = 0; i < a.size(); i++){
         inserirFilmeNaTabela(a[i],i);
-        qDebug() << a[i].getNome() << "\n";
     }
 
     for(int i = 0; i < n.size(); i++){
         inserirFilmeNaTabela(n[i],i);
-        qDebug() << n[i].getNome() << "\n";
     }
 }
 
@@ -120,7 +134,6 @@ void MainWindow::on_btnOrdemNota_clicked()
     a.ordenarListaNota();
     n.ordenarListaNota();
     for (int i=0; i<a.size(); i++)
-        qDebug()<<a[i].getNome() << endl;
     for(int i = 0; i < a.size(); i++){
         inserirFilmeNaTabela(a[i],i);
     }
@@ -128,4 +141,9 @@ void MainWindow::on_btnOrdemNota_clicked()
     for(int i = 0; i < n.size(); i++){
         inserirFilmeNaTabela(n[i],i);
     }
+}
+
+void MainWindow::on_btnwinners_clicked()
+{
+    atualizaPremios();
 }

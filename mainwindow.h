@@ -24,10 +24,13 @@ private slots:
 
     void on_btnOrdemNota_clicked();
 
+    void on_btnwinners_clicked();
+
 private:
     Ui::MainWindow *ui;
 
     void inserirFilmeNaTabela(Filme f, int row);
+    void atualizaPremios();
     classificador a, n;
 };
 
