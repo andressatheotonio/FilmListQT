@@ -206,7 +206,7 @@ void MainWindow::carregarParaAssistir()
         for(int i = 0; i < n.size(); i++){
             if(i >= ui->tbPAssistir->rowCount())
                 ui->tbPAssistir->insertRow(i);
-            inserirFilmeNaTabela(n[i],i);
+                inserirFilmeNaTabela(n[i],i);
         }
     }else{
         QMessageBox::information(this, "Carregar Lista de Filmes Para Assistir", "Não foi possível carregar os filmes!");
@@ -230,45 +230,68 @@ void MainWindow::on_btnReview_clicked()
 void MainWindow::on_tbAssistidos_cellDoubleClicked(int row, int column)
 {
     if(column == 1)
-        abrirReview(a.find(row).getReview());
-    else if(column == 0 or column == 2){
-       QMessageBox::StandardButton resp = QMessageBox::question(this, "Editar Itens", "Você desejar editar os itens do filme selecionado?");
+        abrirReview(a[row].getReview());
+    else if(column == 0){
+       QMessageBox::StandardButton resp = QMessageBox::question(this, "Editar Itens", "Você desejar editar as notas do filme selecionado?");
 
        if(resp == QMessageBox::Yes){
-           bool stats = true;
+           bool ok;
+           QString txt = QInputDialog::getText(this, "Alterar Nota da Crítica", "Nota da Crítica", QLineEdit::Normal,"",&ok);
+           if(ok and !txt.isEmpty()){
+               a[row].setCritica(txt.toFloat());
+               qDebug() << "deumbom1\n" << txt << endl;
+           }
 
-           ui->leName->setText(a.find(row).getNome());
-           ui->leReview->setText(a.find(row).getReview());
-           ui->leCritica->setText(QString::number(a.find(row).getCritica()));
-           ui->lePublico->setText(QString::number(a.find(row).getPublico()));
-           ui->cbGenero->setCurrentText(a.find(row).getGenero());
-           if(a.find(row).getAssistido() == 0)
-               ui->cbStatus->setCurrentText("Não Assistido");
-           else
-               ui->cbStatus->setCurrentText("Assistido");
+           QString txt1 = QInputDialog::getText(this, "Alterar Nota do Público", "Nota do Público", QLineEdit::Normal,"",&ok);
+           if(ok and !txt1.isEmpty()){
+               a[row].setPublico(txt1.toFloat());
+               qDebug() << "deumbom2\n" << txt1 << endl;
+           }
 
+               a.find(row).CalcularMedia();
 
+           qDebug() << a[row].getNome() << a[row].getCritica() << a[row].getPublico() << "\n";
+           inserirFilmeNaTabela(a[row],row);
 
-           QString nome = ui->leName->text();
-           QString genero = ui->cbGenero->currentText();
-           float medpub = (ui->lePublico->text()).toFloat();
-           float medcri = (ui->leCritica->text()).toFloat();
-           if(ui->cbStatus->currentText() == "Não Assistido")
-               stats = false;
-           QString rev = ui->leReview->text();
-
-           Filme edit(nome,genero,medpub,medcri,stats,rev);
-           MainWindow::on_btnEditarFilme_clicked();{
-            inserirFilmeNaTabela(edit,row);
            }
        }
-    }
 }
 
 void MainWindow::on_tbPAssistir_cellDoubleClicked(int row, int column)
 {
     if(column == 1)
         abrirReview(n.find(row).getReview());
+    else if(column == 0){
+       QMessageBox::StandardButton resp = QMessageBox::question(this, "Editar Itens", "Você desejar editar as notas do filme selecionado?");
+
+       if(resp == QMessageBox::Yes){
+           bool ok;
+           QString txt = QInputDialog::getText(this, "Alterar Nota da Crítica", "Nota da Crítica", QLineEdit::Normal,"",&ok);
+           if(ok and !txt.isEmpty()){
+               n[row].setCritica(txt.toFloat());
+               qDebug() << "deumbom1\n" << txt << endl;
+           }
+
+           QString txt1 = QInputDialog::getText(this, "Alterar Nota do Público", "Nota do Público", QLineEdit::Normal,"",&ok);
+           if(ok and !txt1.isEmpty()){
+               n[row].setPublico(txt1.toFloat());
+               qDebug() << "deumbom2\n" << txt1 << endl;
+           }
+
+               n.find(row).CalcularMedia();
+
+           qDebug() << n[row].getNome() << n[row].getCritica() << n[row].getPublico() << "\n";
+
+           inserirFilmeNaTabela(n[row],row);
+
+           }
+       }
 }
 
 
+void MainWindow::on_pushButton_clicked()
+{
+    QUrl url = QUrl("https://github.com/andressatheotonio/FilmListQT/blob/master/README.md");
+
+    QDesktopServices::openUrl(url);
+}

@@ -9,6 +9,7 @@ class classificador
 {
 private:
     QVector <Filme> lista;
+    Filme f;
 public:
     classificador();
     void inserirFilme (Filme f);

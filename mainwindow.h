@@ -26,6 +26,8 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+    classificador a, n;
+
 private slots:
     void on_btnInserir_clicked();
 
@@ -51,15 +53,18 @@ private slots:
 
     void on_tbPAssistir_cellDoubleClicked(int row, int column);
 
+    void on_pushButton_clicked();
 
-    void on_btnEditarFilme_clicked();
+
+    //void editados();
+
 
 private:
     Ui::MainWindow *ui;
 
     void inserirFilmeNaTabela(Filme f, int row);
     void atualizaPremios();
-    classificador a, n;
+
 };
 
 #endif // MAINWINDOW_H

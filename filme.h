@@ -17,25 +17,25 @@ public:
     Filme(QString n, QString g, float mc, float mp, bool a);
     Filme(QString n, QString g, float mc, float mp, bool a, QString r);
 
-    QString getNome() const;
-    void setNome(const QString &value);
+    QString getNome();
+    void setNome(QString &value);
 
-    QString getGenero() const;
-    void setGenero(const QString &value);
+    QString getGenero();
+    void setGenero(QString &value);
 
-    float getCritica() const;
+    float getCritica();
     void setCritica(float value);
 
-    float getPublico() const;
+    float getPublico();
     void setPublico(float value);
 
-    bool getAssistido() const;
+    bool getAssistido();
     void setAssistido(bool assist);
 
-    QString getReview() const;
-    void setReview (const QString &value);
+    QString getReview();
+    void setReview (QString &value);
 
-    float CalcularMedia() const;
+    float CalcularMedia();
 };
 
 #endif // FILME_H
