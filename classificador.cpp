@@ -129,6 +129,21 @@ QString classificador::menorGenero()
     }
 }
 
+void classificador::setCritica(int index, float value)
+{
+    lista[index].setCritica(value);
+}
+
+void classificador::setPublico(int index, float value)
+{
+    lista[index].setPublico(value);
+}
+
+void classificador::setNome(int index, QString value)
+{
+    lista[index].setNome(value);
+}
+
 void classificador::clear()
 {
     lista.clear();

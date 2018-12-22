@@ -9,6 +9,7 @@
 #include <QDesktopServices>
 #include <QUrl>
 #include <QInputDialog>
+#include <QWidget>
 
 #include "arquivos.h"
 #include "filme.h"

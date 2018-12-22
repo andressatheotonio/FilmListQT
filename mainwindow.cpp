@@ -238,25 +238,34 @@ void MainWindow::on_tbAssistidos_cellDoubleClicked(int row, int column)
            bool ok;
            QString txt = QInputDialog::getText(this, "Alterar Nota da Crítica", "Nota da Crítica", QLineEdit::Normal,"",&ok);
            if(ok and !txt.isEmpty()){
-               a[row].setCritica(txt.toFloat());
-               qDebug() << "deumbom1\n" << txt << endl;
+               a.setCritica(row,txt.toFloat());
            }
 
            QString txt1 = QInputDialog::getText(this, "Alterar Nota do Público", "Nota do Público", QLineEdit::Normal,"",&ok);
            if(ok and !txt1.isEmpty()){
-               a[row].setPublico(txt1.toFloat());
-               qDebug() << "deumbom2\n" << txt1 << endl;
+               a.setPublico(row,txt1.toFloat());
            }
 
                a.find(row).CalcularMedia();
 
-           qDebug() << a[row].getNome() << a[row].getCritica() << a[row].getPublico() << "\n";
            inserirFilmeNaTabela(a[row],row);
 
            }
-       }
-}
+    }else if(column == 2){
+        QMessageBox::StandardButton resp = QMessageBox::question(this, "Editar Itens", "Você desejar editar o nome do filme selecionado?");
 
+        if(resp == QMessageBox::Yes){
+            bool ok;
+            QString txt = QInputDialog::getText(this, "Alterar Nome do Filme", "Nome do Filme", QLineEdit::Normal,"",&ok);
+            if(ok and !txt.isEmpty()){
+                a.setNome(row,txt);
+            }
+
+            inserirFilmeNaTabela(a[row],row);
+
+    }
+}
+}
 void MainWindow::on_tbPAssistir_cellDoubleClicked(int row, int column)
 {
     if(column == 1)
@@ -268,24 +277,34 @@ void MainWindow::on_tbPAssistir_cellDoubleClicked(int row, int column)
            bool ok;
            QString txt = QInputDialog::getText(this, "Alterar Nota da Crítica", "Nota da Crítica", QLineEdit::Normal,"",&ok);
            if(ok and !txt.isEmpty()){
-               n[row].setCritica(txt.toFloat());
-               qDebug() << "deumbom1\n" << txt << endl;
+               n.setCritica(row,txt.toFloat());
            }
 
            QString txt1 = QInputDialog::getText(this, "Alterar Nota do Público", "Nota do Público", QLineEdit::Normal,"",&ok);
            if(ok and !txt1.isEmpty()){
-               n[row].setPublico(txt1.toFloat());
-               qDebug() << "deumbom2\n" << txt1 << endl;
+               n.setPublico(row,txt1.toFloat());
            }
 
                n.find(row).CalcularMedia();
 
-           qDebug() << n[row].getNome() << n[row].getCritica() << n[row].getPublico() << "\n";
 
            inserirFilmeNaTabela(n[row],row);
 
            }
-       }
+    }else if(column == 2){
+        QMessageBox::StandardButton resp = QMessageBox::question(this, "Editar Itens", "Você desejar editar o nome do filme selecionado?");
+
+        if(resp == QMessageBox::Yes){
+            bool ok;
+            QString txt = QInputDialog::getText(this, "Alterar Nome do Filme", "Nome do Filme", QLineEdit::Normal,"",&ok);
+            if(ok and !txt.isEmpty()){
+                n.setNome(row,txt);
+            }
+
+            inserirFilmeNaTabela(n[row],row);
+        }
+
+    }
 }
 
 

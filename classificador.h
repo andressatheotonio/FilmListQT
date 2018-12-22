@@ -19,6 +19,9 @@ public:
     QString piorFilme();
     QString maiorGenero();
     QString menorGenero();
+    void setCritica(int index, float value);
+    void setPublico(int index, float value);
+    void setNome(int index, QString value);
 
     void clear();
     int size();
