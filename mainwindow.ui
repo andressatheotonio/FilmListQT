@@ -44,8 +44,8 @@
        <rect>
         <x>20</x>
         <y>20</y>
-        <width>751</width>
-        <height>200</height>
+        <width>761</width>
+        <height>230</height>
        </rect>
       </property>
       <layout class="QFormLayout" name="formLayout">
@@ -333,7 +333,7 @@
      <widget class="QPushButton" name="btnInserir">
       <property name="geometry">
        <rect>
-        <x>350</x>
+        <x>310</x>
         <y>240</y>
         <width>93</width>
         <height>28</height>
@@ -425,10 +425,10 @@
        </font>
       </property>
       <attribute name="horizontalHeaderVisible">
-       <bool>true</bool>
+       <bool>false</bool>
       </attribute>
       <attribute name="horizontalHeaderCascadingSectionResizes">
-       <bool>true</bool>
+       <bool>false</bool>
       </attribute>
       <attribute name="horizontalHeaderDefaultSectionSize">
        <number>60</number>
@@ -460,6 +460,43 @@
         <set>AlignCenter</set>
        </property>
       </column>
+     </widget>
+     <widget class="QPushButton" name="btnReview">
+      <property name="geometry">
+       <rect>
+        <x>840</x>
+        <y>550</y>
+        <width>131</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Reviews</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnEditarFilme">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>240</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft JhengHei UI Light</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Editar Filme</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="Estatisticas">
@@ -518,6 +555,7 @@
       <property name="font">
        <font>
         <family>Microsoft JhengHei UI Light</family>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="text">
@@ -557,6 +595,7 @@
       <property name="font">
        <font>
         <family>Microsoft JhengHei UI Light</family>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="text">
@@ -596,6 +635,7 @@
       <property name="font">
        <font>
         <family>Microsoft JhengHei UI Light</family>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="text">
@@ -648,6 +688,7 @@
       <property name="font">
        <font>
         <family>Microsoft JhengHei UI Light</family>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="text">
@@ -669,6 +710,7 @@
       <property name="font">
        <font>
         <family>Microsoft JhengHei UI Light</family>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="text">
@@ -703,6 +745,7 @@
       <property name="font">
        <font>
         <family>Microsoft JhengHei UI Light</family>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="text">
@@ -717,12 +760,12 @@
        <rect>
         <x>510</x>
         <y>370</y>
-        <width>261</width>
+        <width>271</width>
         <height>16</height>
        </rect>
       </property>
       <property name="text">
-       <string>Gênero que mais aparece - Para Assistir</string>
+       <string>Gênero que mais apareceu - Para Assistir</string>
       </property>
      </widget>
      <widget class="QLabel" name="lbgenmenosf">
@@ -755,6 +798,7 @@
       <property name="font">
        <font>
         <family>Microsoft JhengHei UI Light</family>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="text">
@@ -776,6 +820,7 @@
       <property name="font">
        <font>
         <family>Microsoft JhengHei UI Light</family>
+        <pointsize>12</pointsize>
        </font>
       </property>
       <property name="text">

@@ -88,11 +88,11 @@ void MainWindow::inserirFilmeNaTabela(Filme f, int row)
 {
     if(f.getAssistido() == true){
         ui->tbAssistidos->setItem(row,0, new QTableWidgetItem(QString::number(f.CalcularMedia())));
-        ui->tbAssistidos->setItem(row, 1, new QTableWidgetItem("link"));
+        ui->tbAssistidos->setItem(row, 1, new QTableWidgetItem("Review"));
         ui->tbAssistidos->setItem(row,2, new QTableWidgetItem(f.getNome()));
     } else{
         ui->tbPAssistir->setItem(row,0, new QTableWidgetItem(QString::number(f.CalcularMedia())));
-        ui->tbPAssistir->setItem(row, 1, new QTableWidgetItem("link"));
+        ui->tbPAssistir->setItem(row, 1, new QTableWidgetItem("Review"));
         ui->tbPAssistir->setItem(row,2, new QTableWidgetItem(f.getNome()));
     }
 }
@@ -151,7 +151,7 @@ void MainWindow::on_btnwinners_clicked()
 {
 
     if(a.size() == 0 or n.size() == 0){
-       QMessageBox::information(this, "Watchlist Awards", "Preencha as duas tabelas antes de continuar!");
+       QMessageBox::warning(this, "Watchlist Awards", "Preencha as duas tabelas antes de continuar!");
     }else
         atualizaPremios();
 }
@@ -202,7 +202,7 @@ void MainWindow::carregarParaAssistir()
 
     if(arquivos::carregarLista(arqname,n)){
 
-        ui->tbAssistidos->clearContents();
+        ui->tbPAssistir->clearContents();
         for(int i = 0; i < n.size(); i++){
             if(i >= ui->tbPAssistir->rowCount())
                 ui->tbPAssistir->insertRow(i);
@@ -212,3 +212,63 @@ void MainWindow::carregarParaAssistir()
         QMessageBox::information(this, "Carregar Lista de Filmes Para Assistir", "Não foi possível carregar os filmes!");
     }
 }
+
+void MainWindow::abrirReview(QString link)
+{
+    QUrl url = QUrl(link);
+
+    QDesktopServices::openUrl(url);
+
+}
+
+
+void MainWindow::on_btnReview_clicked()
+{
+   abrirReview("https://www.rottentomatoes.com/");
+}
+
+void MainWindow::on_tbAssistidos_cellDoubleClicked(int row, int column)
+{
+    if(column == 1)
+        abrirReview(a.find(row).getReview());
+    else if(column == 0 or column == 2){
+       QMessageBox::StandardButton resp = QMessageBox::question(this, "Editar Itens", "Você desejar editar os itens do filme selecionado?");
+
+       if(resp == QMessageBox::Yes){
+           bool stats = true;
+
+           ui->leName->setText(a.find(row).getNome());
+           ui->leReview->setText(a.find(row).getReview());
+           ui->leCritica->setText(QString::number(a.find(row).getCritica()));
+           ui->lePublico->setText(QString::number(a.find(row).getPublico()));
+           ui->cbGenero->setCurrentText(a.find(row).getGenero());
+           if(a.find(row).getAssistido() == 0)
+               ui->cbStatus->setCurrentText("Não Assistido");
+           else
+               ui->cbStatus->setCurrentText("Assistido");
+
+
+
+           QString nome = ui->leName->text();
+           QString genero = ui->cbGenero->currentText();
+           float medpub = (ui->lePublico->text()).toFloat();
+           float medcri = (ui->leCritica->text()).toFloat();
+           if(ui->cbStatus->currentText() == "Não Assistido")
+               stats = false;
+           QString rev = ui->leReview->text();
+
+           Filme edit(nome,genero,medpub,medcri,stats,rev);
+           MainWindow::on_btnEditarFilme_clicked();{
+            inserirFilmeNaTabela(edit,row);
+           }
+       }
+    }
+}
+
+void MainWindow::on_tbPAssistir_cellDoubleClicked(int row, int column)
+{
+    if(column == 1)
+        abrirReview(n.find(row).getReview());
+}
+
+

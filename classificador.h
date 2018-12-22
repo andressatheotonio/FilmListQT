@@ -21,6 +21,8 @@ public:
 
     void clear();
     int size();
+    void erase(int index);
+    Filme find(int index);
 
     Filme operator[](int i);
 };

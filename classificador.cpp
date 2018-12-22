@@ -139,6 +139,17 @@ int classificador::size()
     return lista.size();
 }
 
+void classificador::erase(int index)
+{
+    lista.erase(lista.begin()+index);
+}
+
+Filme classificador::find(int index)
+{
+    return lista[index];
+}
+
+
 Filme classificador::operator[](int i)
 {
     return lista[i];

@@ -45,7 +45,7 @@ bool arquivos::carregarLista(QString &arquivo, classificador &lista)
 
            QStringList separados = line.split(",");
 
-           if(separados[5].size() == 0){
+           if(separados.size() < 6){
                Filme f(separados[0],separados[1],separados[2].toFloat(),separados[3].toFloat(),separados[4].toInt());
                lista.inserirFilme(f);
            }else{
