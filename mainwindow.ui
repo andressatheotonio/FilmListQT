@@ -25,7 +25,7 @@
     </property>
     <property name="font">
      <font>
-      <family>Segoe UI</family>
+      <family>Microsoft JhengHei UI Light</family>
       <pointsize>9</pointsize>
      </font>
     </property>
@@ -53,7 +53,7 @@
         <widget class="QLabel" name="lbName">
          <property name="font">
           <font>
-           <family>Segoe UI</family>
+           <family>Microsoft JhengHei UI Light</family>
            <pointsize>9</pointsize>
           </font>
          </property>
@@ -66,7 +66,7 @@
         <widget class="QLineEdit" name="leName">
          <property name="font">
           <font>
-           <family>Segoe UI</family>
+           <family>Microsoft JhengHei UI Light</family>
           </font>
          </property>
         </widget>
@@ -75,7 +75,7 @@
         <widget class="QLabel" name="lbName_2">
          <property name="font">
           <font>
-           <family>Segoe UI</family>
+           <family>Microsoft JhengHei UI Light</family>
            <pointsize>9</pointsize>
           </font>
          </property>
@@ -88,7 +88,7 @@
         <widget class="QComboBox" name="cbGenero">
          <property name="font">
           <font>
-           <family>Segoe UI</family>
+           <family>Microsoft JhengHei UI Light</family>
           </font>
          </property>
          <item>
@@ -127,7 +127,7 @@
         <widget class="QLabel" name="lbCritica">
          <property name="font">
           <font>
-           <family>Segoe UI</family>
+           <family>Microsoft JhengHei UI Light</family>
            <pointsize>9</pointsize>
           </font>
          </property>
@@ -140,7 +140,7 @@
         <widget class="QLineEdit" name="leCritica">
          <property name="font">
           <font>
-           <family>Segoe UI</family>
+           <family>Microsoft JhengHei UI Light</family>
           </font>
          </property>
         </widget>
@@ -149,7 +149,7 @@
         <widget class="QLineEdit" name="lePublico">
          <property name="font">
           <font>
-           <family>Segoe UI</family>
+           <family>Microsoft JhengHei UI Light</family>
           </font>
          </property>
         </widget>
@@ -158,7 +158,7 @@
         <widget class="QLabel" name="lbReview">
          <property name="font">
           <font>
-           <family>Segoe UI</family>
+           <family>Microsoft JhengHei UI Light</family>
            <pointsize>9</pointsize>
           </font>
          </property>
@@ -171,7 +171,7 @@
         <widget class="QLineEdit" name="leReview">
          <property name="font">
           <font>
-           <family>Segoe UI</family>
+           <family>Microsoft JhengHei UI Light</family>
           </font>
          </property>
         </widget>
@@ -180,7 +180,7 @@
         <widget class="QLabel" name="lbStatus">
          <property name="font">
           <font>
-           <family>Segoe UI</family>
+           <family>Microsoft JhengHei UI Light</family>
            <pointsize>9</pointsize>
           </font>
          </property>
@@ -191,6 +191,11 @@
        </item>
        <item row="6" column="1">
         <widget class="QComboBox" name="cbStatus">
+         <property name="font">
+          <font>
+           <family>Microsoft JhengHei UI Light</family>
+          </font>
+         </property>
          <item>
           <property name="text">
            <string>Selecione um status</string>
@@ -212,7 +217,7 @@
         <widget class="QLabel" name="lbPublico">
          <property name="font">
           <font>
-           <family>Segoe UI</family>
+           <family>Microsoft JhengHei UI Light</family>
            <pointsize>9</pointsize>
           </font>
          </property>
@@ -223,69 +228,10 @@
        </item>
       </layout>
      </widget>
-     <widget class="QTableWidget" name="tbAssistidos">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>300</y>
-        <width>341</width>
-        <height>361</height>
-       </rect>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>341</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Segoe UI</family>
-        <pointsize>8</pointsize>
-        <stylestrategy>PreferDefault</stylestrategy>
-       </font>
-      </property>
-      <attribute name="horizontalHeaderVisible">
-       <bool>true</bool>
-      </attribute>
-      <attribute name="horizontalHeaderCascadingSectionResizes">
-       <bool>true</bool>
-      </attribute>
-      <attribute name="horizontalHeaderDefaultSectionSize">
-       <number>60</number>
-      </attribute>
-      <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
-       <bool>false</bool>
-      </attribute>
-      <attribute name="horizontalHeaderStretchLastSection">
-       <bool>true</bool>
-      </attribute>
-      <column>
-       <property name="text">
-        <string>Média</string>
-       </property>
-       <property name="textAlignment">
-        <set>AlignCenter</set>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Review</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Filme</string>
-       </property>
-       <property name="textAlignment">
-        <set>AlignCenter</set>
-       </property>
-      </column>
-     </widget>
      <widget class="QLabel" name="lbTabTitle1">
       <property name="geometry">
        <rect>
-        <x>110</x>
+        <x>130</x>
         <y>270</y>
         <width>121</width>
         <height>20</height>
@@ -293,7 +239,7 @@
       </property>
       <property name="font">
        <font>
-        <family>Segoe UI</family>
+        <family>Microsoft JhengHei UI Light</family>
         <pointsize>9</pointsize>
        </font>
       </property>
@@ -318,7 +264,7 @@
       </property>
       <property name="font">
        <font>
-        <family>Segoe UI</family>
+        <family>Microsoft JhengHei UI Light</family>
         <pointsize>9</pointsize>
        </font>
       </property>
@@ -349,6 +295,7 @@
       </property>
       <property name="font">
        <font>
+        <family>Microsoft JhengHei UI Light</family>
         <pointsize>8</pointsize>
        </font>
       </property>
@@ -394,7 +341,7 @@
       </property>
       <property name="font">
        <font>
-        <family>Segoe UI</family>
+        <family>Microsoft JhengHei UI Light</family>
         <pointsize>8</pointsize>
        </font>
       </property>
@@ -431,7 +378,7 @@
       </property>
       <property name="font">
        <font>
-        <family>Segoe UI</family>
+        <family>Microsoft JhengHei UI Light</family>
         <pointsize>8</pointsize>
        </font>
       </property>
@@ -454,6 +401,65 @@
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
+     </widget>
+     <widget class="QTableWidget" name="tbAssistidos">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>300</y>
+        <width>341</width>
+        <height>361</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>341</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft JhengHei UI Light</family>
+        <pointsize>8</pointsize>
+        <stylestrategy>PreferDefault</stylestrategy>
+       </font>
+      </property>
+      <attribute name="horizontalHeaderVisible">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="horizontalHeaderCascadingSectionResizes">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>60</number>
+      </attribute>
+      <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>true</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>Média</string>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Review</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Filme</string>
+       </property>
+       <property name="textAlignment">
+        <set>AlignCenter</set>
+       </property>
+      </column>
      </widget>
     </widget>
     <widget class="QWidget" name="Estatisticas">
@@ -491,6 +497,11 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Microsoft JhengHei UI Light</family>
+       </font>
+      </property>
       <property name="text">
        <string>Melhor Filme - Assistido</string>
       </property>
@@ -503,6 +514,11 @@
         <width>261</width>
         <height>61</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft JhengHei UI Light</family>
+       </font>
       </property>
       <property name="text">
        <string/>
@@ -520,6 +536,11 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Microsoft JhengHei UI Light</family>
+       </font>
+      </property>
       <property name="text">
        <string>Pior Filme - Assistido</string>
       </property>
@@ -527,11 +548,16 @@
      <widget class="QLabel" name="piorfilmet">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>260</y>
+        <x>90</x>
+        <y>270</y>
         <width>261</width>
         <height>61</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft JhengHei UI Light</family>
+       </font>
       </property>
       <property name="text">
        <string/>
@@ -549,6 +575,11 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Microsoft JhengHei UI Light</family>
+       </font>
+      </property>
       <property name="text">
        <string>Gênero que mais apareceu - Assistido</string>
       </property>
@@ -561,6 +592,11 @@
         <width>261</width>
         <height>61</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft JhengHei UI Light</family>
+       </font>
       </property>
       <property name="text">
        <string/>
@@ -591,6 +627,11 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Microsoft JhengHei UI Light</family>
+       </font>
+      </property>
       <property name="text">
        <string>Gênero que menos apareceu - Assistido</string>
       </property>
@@ -598,11 +639,16 @@
      <widget class="QLabel" name="genmenost">
       <property name="geometry">
        <rect>
-        <x>100</x>
+        <x>90</x>
         <y>530</y>
         <width>261</width>
         <height>61</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft JhengHei UI Light</family>
+       </font>
       </property>
       <property name="text">
        <string/>
@@ -619,6 +665,11 @@
         <width>261</width>
         <height>61</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft JhengHei UI Light</family>
+       </font>
       </property>
       <property name="text">
        <string/>
@@ -649,6 +700,11 @@
         <height>61</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Microsoft JhengHei UI Light</family>
+       </font>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -678,6 +734,11 @@
         <height>16</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Microsoft JhengHei UI Light</family>
+       </font>
+      </property>
       <property name="text">
        <string>Gênero que menos apareceu - Para Assistir</string>
       </property>
@@ -690,6 +751,11 @@
         <width>261</width>
         <height>61</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Microsoft JhengHei UI Light</family>
+       </font>
       </property>
       <property name="text">
        <string/>
@@ -707,6 +773,11 @@
         <height>61</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Microsoft JhengHei UI Light</family>
+       </font>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -717,8 +788,8 @@
      <widget class="QPushButton" name="btnwinners">
       <property name="geometry">
        <rect>
-        <x>450</x>
-        <y>590</y>
+        <x>890</x>
+        <y>570</y>
         <width>93</width>
         <height>28</height>
        </rect>
@@ -740,11 +811,18 @@
     </rect>
    </property>
    <widget class="QMenu" name="menuArquivos">
+    <property name="font">
+     <font>
+      <family>Microsoft JhengHei UI Light</family>
+     </font>
+    </property>
     <property name="title">
      <string>Arquivos</string>
     </property>
-    <addaction name="actionSalvar"/>
-    <addaction name="actionCarregar"/>
+    <addaction name="actionSalvarAssistidos"/>
+    <addaction name="actionCarregarAssistidos"/>
+    <addaction name="actionSalvarParaAssistir"/>
+    <addaction name="actionCarregarParaAssistir"/>
    </widget>
    <addaction name="menuArquivos"/>
   </widget>
@@ -767,14 +845,34 @@
     <string>Para assistir</string>
    </property>
   </action>
-  <action name="actionSalvar">
+  <action name="actionSalvarAssistidos">
    <property name="text">
-    <string>Salvar</string>
+    <string>Salvar Assistidos</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Microsoft JhengHei UI Light</family>
+    </font>
    </property>
   </action>
-  <action name="actionCarregar">
+  <action name="actionCarregarAssistidos">
    <property name="text">
-    <string>Carregar</string>
+    <string>Carregar Assistidos</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Microsoft JhengHei UI Light</family>
+    </font>
+   </property>
+  </action>
+  <action name="actionSalvarParaAssistir">
+   <property name="text">
+    <string>Salvar Para Assistir</string>
+   </property>
+  </action>
+  <action name="actionCarregarParaAssistir">
+   <property name="text">
+    <string>Carregar Para Assistir</string>
    </property>
   </action>
  </widget>

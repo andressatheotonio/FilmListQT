@@ -45,82 +45,87 @@ QString classificador::maiorGenero()
 {
     int generos[10] = {};
 
-    //Drama, index 0; Ação, index 1, Comédia, index 2; Terror, index 3; Ficção, index 4;
+    //Drama, index 1; Ação, index 2, Comédia, index 3; Terror, index 4; Ficção, index 5;
 
     for(int i = 0; i < lista.size(); i++){
         if(lista[i].getGenero() == "Drama")
-            generos[0]++;
-        else if(lista[i].getGenero() == "Ação/Aventura")
             generos[1]++;
-        else if(lista[i].getGenero() == "Comédia")
+        else if(lista[i].getGenero() == "Ação/Aventura")
             generos[2]++;
-        else if(lista[i].getGenero() == "Terror")
+        else if(lista[i].getGenero() == "Comédia")
             generos[3]++;
-        else
+        else if(lista[i].getGenero() == "Terror")
             generos[4]++;
+        else
+            generos[5]++;
     }
+
     int maxi = INT_MIN, imaxi = 0;
 
-    for(int i = 0; i < 5; i++){
-        if(generos[i] > maxi){
+    for(int i = 1; i <= 5; i++){
+        if(generos[i] > maxi and generos[i] != 0){
             maxi = generos[i];
             imaxi = i;
         }
     }
 
     switch (imaxi) {
-    case 0:
-        return "Drama";
     case 1:
-        return "Ação/Aventura";
+        return "Drama";
     case 2:
-        return "Comédia";
+        return "Ação/Aventura";
     case 3:
-        return "Terror";
+        return "Comédia";
     case 4:
+        return "Terror";
+    case 5:
         return "Ficção";
+    case 0:
+        return "-";
     }
 }
 
 QString classificador::menorGenero()
 {
-    int generos[5] = {};
+    int generos[10] = {};
 
-    //Drama, index 0; Ação, index 1, Comédia, index 2; Terror, index 3; Ficção, index 4;
+    //Drama, index 1; Ação, index 2, Comédia, index 3; Terror, index 4; Ficção, index 5;
 
     for(int i = 0; i < lista.size(); i++){
 
         if(lista[i].getGenero() == "Drama")
-            generos[0]++;
-        else if(lista[i].getGenero() == "Ação/Aventura")
             generos[1]++;
-        else if(lista[i].getGenero() == "Comédia")
+        else if(lista[i].getGenero() == "Ação/Aventura")
             generos[2]++;
-        else if(lista[i].getGenero() == "Terror")
+        else if(lista[i].getGenero() == "Comédia")
             generos[3]++;
-        else
+        else if(lista[i].getGenero() == "Terror")
             generos[4]++;
+        else
+            generos[5]++;
     }
     int mini = INT_MAX, imini = 0;
 
-    for(int i = 0; i < 5; i++){
-        if(generos[i] < mini){
+    for(int i = 1; i <= 5; i++){
+        if(generos[i] < mini and generos[i] != 0){
             mini = generos[i];
             imini = i;
         }
     }
 
     switch (imini) {
-    case 0:
-        return "Drama";
     case 1:
-        return "Ação/Aventura";
+        return "Drama";
     case 2:
-        return "Comédia";
+        return "Ação/Aventura";
     case 3:
-        return "Terror";
+        return "Comédia";
     case 4:
+        return "Terror";
+    case 5:
         return "Ficção";
+    case 0:
+        return "-";
     }
 }
 

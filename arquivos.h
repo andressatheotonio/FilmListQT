@@ -14,6 +14,7 @@ class arquivos
 {
 public:
     arquivos();
+    classificador a, n;
     static bool salvarLista(QString &arquivo, classificador &lista);
     static bool carregarLista(QString &arquivo, classificador &lista);
 

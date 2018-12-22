@@ -2,6 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QDebug>
+#include <QFileDialog>
+#include <QMessageBox>
+
+#include "arquivos.h"
 #include "filme.h"
 #include "classificador.h"
 
@@ -25,6 +30,16 @@ private slots:
     void on_btnOrdemNota_clicked();
 
     void on_btnwinners_clicked();
+
+    void salvarAssistidos();
+
+    void carregarAssistidos();
+
+    void salvarParaAssistir();
+
+    void carregarParaAssistir();
+
+
 
 private:
     Ui::MainWindow *ui;

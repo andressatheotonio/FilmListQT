@@ -7,6 +7,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    connect(ui->actionSalvarAssistidos,SIGNAL(triggered()), this, SLOT(salvarAssistidos()));
+    connect(ui->actionSalvarParaAssistir,SIGNAL(triggered()), this, SLOT(salvarParaAssistir()));
+    connect(ui->actionCarregarAssistidos,SIGNAL(triggered()), this, SLOT(carregarAssistidos()));
+    connect(ui->actionCarregarParaAssistir,SIGNAL(triggered()), this, SLOT(carregarParaAssistir()));
 }
 
 MainWindow::~MainWindow()
@@ -145,5 +149,66 @@ void MainWindow::on_btnOrdemNota_clicked()
 
 void MainWindow::on_btnwinners_clicked()
 {
-    atualizaPremios();
+
+    if(a.size() == 0 or n.size() == 0){
+       QMessageBox::information(this, "Watchlist Awards", "Preencha as duas tabelas antes de continuar!");
+    }else
+        atualizaPremios();
+}
+
+void MainWindow::salvarAssistidos()
+{
+    QString arqname = QFileDialog::getSaveFileName(this, "Lista de Filmes Assistidos", "", "Texto Puro(*.txt);;Arquivos Separado por Vírgulas(*.csv)");
+
+    if(arquivos::salvarLista(arqname,a))
+        QMessageBox::information(this,"Salvar Filmes Assistidos", "Filmes Salvos com Sucesso!");
+    else
+        QMessageBox::information(this,"Salvar Filmes Assistidos", "Não foi possível salvar os filmes!");
+}
+
+void MainWindow::carregarAssistidos()
+{
+    QString arqname = QFileDialog::getOpenFileName(this, "Lista de Filmes Assistidos","","Texto Puro(*.txt);;Arquivos Separado por Vírgulas(*.csv)");
+    a.clear();
+
+    if(arquivos::carregarLista(arqname,a)){
+
+        ui->tbAssistidos->clearContents();
+        for(int i = 0; i < a.size(); i++){
+            if(i >= ui->tbAssistidos->rowCount())
+                ui->tbAssistidos->insertRow(i);
+            inserirFilmeNaTabela(a[i],i);
+        }
+    }else{
+        QMessageBox::information(this, "Carregar Lista de Filmes Assistidos", "Não foi possível carregar os filmes!");
+    }
+}
+
+void MainWindow::salvarParaAssistir()
+{
+    QString arqname = QFileDialog::getSaveFileName(this, "Lista de Filmes Para Assistir", "", "Texto Puro(*.txt);;Arquivos Separado por Vírgulas(*.csv)");
+
+    if(arquivos::salvarLista(arqname,n))
+        QMessageBox::information(this,"Salvar Filmes Para Assistir", "Filmes Salvos com Sucesso!");
+    else
+        QMessageBox::information(this,"Salvar Filmes Para Assistir", "Não foi possível salvar os filmes!");
+
+}
+
+void MainWindow::carregarParaAssistir()
+{
+    QString arqname = QFileDialog::getOpenFileName(this, "Lista de Filmes Para Assistir","","Texto Puro(*.txt);;Arquivos Separado por Vírgulas(*.csv)");
+    n.clear();
+
+    if(arquivos::carregarLista(arqname,n)){
+
+        ui->tbAssistidos->clearContents();
+        for(int i = 0; i < n.size(); i++){
+            if(i >= ui->tbPAssistir->rowCount())
+                ui->tbPAssistir->insertRow(i);
+            inserirFilmeNaTabela(n[i],i);
+        }
+    }else{
+        QMessageBox::information(this, "Carregar Lista de Filmes Para Assistir", "Não foi possível carregar os filmes!");
+    }
 }
