@@ -78,7 +78,7 @@ Como tudo nesse app, não tem complicação! Basta selecionar a opção Salvar A
 
 Para carregar também é muito fácil, basta selecionar um arquivo que respeite o formato lido pelo app (todas informações separadas por vírgulas) e ele será mostrado automaticamente dentro das tabelas e estará pronto para ser lido nas estatísticas, ordenado por nome, nota e ter o review visitado.
 
-![Carregar filmes assistidos para o aplicativo](figuras/car.PNG)
+![Carregar filmes assistidos para o aplicativo](figuras/car.png)
 
 ### Como acessar os reviews dos filmes cadastrados no aplicativo?
 
